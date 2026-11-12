@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Pcard from "../components/Pcard.astro";
+const endpoint = "https://kea-alt-del.dk/t7/api/products";
+const data =  await fetch(endpoint).then(res=> res.json());
+console.table(data);
+---
+
+<Layout>
+    <h2>Vores produkter</h2>
+    <section>
+        {data.map((produkt)=><Pcard {produkt} />)}
+    
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1rem;
+        background-color: #88dde6;
+    }
+</style>

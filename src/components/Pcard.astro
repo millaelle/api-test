@@ -1,0 +1,21 @@
+---
+const {produkt} = Astro.props;
+---
+
+<article>
+    <img src=`https://kea-alt-del.dk/t7/images/webp/640/${produkt.id}.webp`
+     alt="produktbillede" />
+    <h2>{produkt.productdisplayname} </h2>
+    <p>{produkt.price},- kr.</p>
+    </article>
+
+    <style>
+        article {
+            padding: 1rem;
+            border: 1px solid;
+            background-color: #ef9191;
+        }
+        img {
+            max-width: 100%;
+        }
+    </style>
